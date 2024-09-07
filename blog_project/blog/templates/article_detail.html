@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+</head>
+<body>
+
+<h1>{{ article.title }}</h1>
+    <p>{{ article.content }}</p>
+
+    <h2>Комментарии</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment.author.username }}: {{ comment.text }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Оставить комментарий</h2>
+    { if user.is_authenticated }
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Отправить</button>
+        </form>
+    {% else %}
+        <p>Пожалуйста, <a href="{ url 'login' }">войдите</a> для добавления комментариев.</p>
+    {% endif %}
+
+</body>
+</html>
