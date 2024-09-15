@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+   {% block title %}Блог{% endblock %}
+
+   {% block content %}
+   <h1>Блог</h1>
+<p>В данный момент мы обновляем наш сайт, но уже через некоторое время данная страница с информацией будет доступна.</p>
+   {% for post in posts %}
+       {% include "blog_app/post_preview_include.html" with post=post %}
+   {% endfor %}
+   {% endblock %}
