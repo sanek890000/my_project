@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+   <html>
+   <head>
+       <title>{{ post.title }}</title>
+   </head>
+   <body>
+       <h1>{{ post.title }}</h1>
+       <p>{{ post.text }}</p>
+       <p>Просмотров: {{post.views }}</p>
+       <p>Автор: {{ post.author.username }}</p>
+       <p>Опубликовано: {{ post.published_date }}</p>
+       <p>Обновлено: {{ post.updated_date }}</p>
+       <p>Категория: {{ post.data.category }}</p>
+       <p>Теги: {{ post.data.tags|join:", " }}</p>
+       <a href="{% url 'main' %}">Назад к списку постов</a>
+   </body>
+   </html>
