@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category: {{ category.name }}</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Category: {{ category.name }}</h1>
+    </header>
+    <main>
+        <ul>
+            {% for post in category.posts.all %}
+                <li>
+                    <a href="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Blog</p>
+    </footer>
+</body>
+</html>
