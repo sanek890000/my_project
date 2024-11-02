@@ -1,0 +1,33 @@
+<div class="comments">
+    <h3>Комментарии</h3>
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <strong>{{ comment.author }}</strong>
+                <p>{{ comment.text }}</p>
+                <small>{{ comment.created_at }}</small>
+            </li>
+        {% empty %}
+            <li>
+                <strong>Анна Петрова</strong>
+                <p>Это отличная статья! Я узнала много нового.</p>
+                <small>1 октября 2024</small>
+            </li>
+            <li>
+                <strong>Иван Сидоров</strong>
+                <p>К сожалению, я не согласен с основной идеей. Думаю, стоит рассмотреть другой подход.</p>
+                <small>11 октября 2023</small>
+            </li>
+            <li>
+                <strong>Мария Иванова</strong>
+                <p>Спасибо за полезные советы! Они мне очень помогли в работе.</p>
+                <small>12 октября 2023</small>
+            </li>
+            <li>
+                <strong>Алексей Кузнецов</strong>
+                <p>Впечатляющая работа! Когда будет продолжение?</p>
+                <small>13 октября 2023</small>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
